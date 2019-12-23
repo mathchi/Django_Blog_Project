@@ -41,16 +41,20 @@
               <a class="nav-brand" href="{% url 'article:dashboard' %}">Control Panel&nbsp;&nbsp;</a>
             </li>
             <li class="nav-item active">
+              <a class="nav-brand" href="{% url 'user:change_password' %}">Account&nbsp;&nbsp;</a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-brand" href="{% url 'user:logout' %}">Logout&nbsp;&nbsp;</a>
               </li>
           {% else %}
             <li class="nav-item active">
                 <a class="nav-brand" href="{% url 'user:login' %}">Login&nbsp;&nbsp;</a>
               </li>
-          {% endif %}
-          <li class="nav-item active">
+              <li class="nav-item active">
                 <a class="nav-brand" href="{% url 'user:register' %}">Register</a>
-          </li>
+              </li>
+          {% endif %}
+
           </ul>   
        
 </nav>

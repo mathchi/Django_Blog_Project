@@ -3,6 +3,7 @@ from .forms import ArticleForm
 from .models import Article, Comment
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -20,8 +21,9 @@ def articles(request):
 
 
 def index(request):
+    count = User.objects.count()
     context = {
-        "numbers": [1,2,3,4,5]
+        "count": count
     }
     return render(request,"index.html", context)
 
